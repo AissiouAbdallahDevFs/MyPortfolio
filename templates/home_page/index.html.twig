@@ -3,38 +3,97 @@
 {% block title %}Hello HomePageController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper {
-        margin: 1em auto;
-        max-width: 800px;
-        width: 95%;
-        font: 18px/1.5 sans-serif;
-    }
+<header style="background-image: url(../../assets/images/wp.jpg); padding-bottom: 1rem;">
+    <h1 style="color: rgb(255, 255, 255);padding-bottom: 1rem;text-align: center;">AISSIOU Abdallah Dev Symfony
+    </h1>
+    <div class="container" style="text-align: center;">
+        <img style="width: 120px; border-radius: 13px;" src="../../assets/images/photo.jpg" />
+        <p style="color: cornsilk;border-radius: 13px;background-color: rgba(131, 131, 131, 0.178);">Grand passionné par
+            le code et l'informatique en général, j'ai fais un Bac Professionnel Informatique et
+            réseaux.
 
-    .example-wrapper code {
-        background: #F5F5F5;
-        padding: 2px 6px;
-    }
-</style>
+            Très vite l'envie de me faire de l'expérience j'ai donc travaillé en auto-entrepreneur et commercial
+            durant
+            5 ans, mais ma passion pour le code était plus forte que tout.
 
-    <h1>Hello {{ controller_name }}! ✅</h1>
-    <img/>
-    {% for formation in formations %}
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">{{ formation.diplome }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ formation.ecole }}</h6>
-        </div>
+            J'ai entrepris de m'orienter vers une formation Développeur Web pour faire le métier de mes rêves et
+            m'épanouir professionnellement.
+
+            Extrêmement motivé, consciencieux, rigoureux et follement passionné j'ai rapidement trouvé mes marques.
+            Durant cette formation mon envie de devenir développeur web c'est confirmé et c'est exacerbé, fort des
+            bases
+            solides que j'ai pu acquérir par cette expérience je suis à ce jour pleinement apte à mener un projet à
+            bien.
+
+            Durant ma formation j'ai pu créer :
+            - une artothèque mis en place Avec le framework Symfony et React.js (HTML-CSS JS Twig)
+            - une boutique en ligne en pure php ( sans moyen de paiement )(HTML-CSS JS)
+            - un jeux de rôles en ligne en PHP POO (HTML-CSS JS)
+
+
+            Merci de m'avoir lu jusqu'au bout pour toutes informations complémentaires sur mes tarifs veuillez me
+            contacter 
+        </p>
     </div>
-{% endfor %}
-<h2>Skills</h2>
-{% for skill in skills %}
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title">{{ skill.Langage }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ skill.Level }}</h6>
+</header>
+<div class="container" style="text-align: center;"></div>
+<div class="container">
+    <h2>Mes projets</h2>
+        <h4>FindMyArt</h4>
+            <h5>Descriptions : </h5>
+                <a href="#"><img style="width: 220px;border-radius: 13px;" src="../../assets/images/image1.png" alt="Image 1 du projet FindMyArt"></a>
+                <a href="#"><img style="width: 220px;border-radius: 13px;" src="../../assets/images/image2.png" alt="Image 2 du projet FindMyArt"></a>
+                <a href="#"><img style="width: 220px;border-radius: 13px;" src="../../assets/images/image3.png" alt="Image 3 du projet FindMyArt"></a>
+                <p>
+                    Find My Art, c'est quoi ?
+                    C'est une artothèque !
+                    Comme pour une bibliothèque, vous choisissez une oeuvre qui vous plait, et vous l'accrochez chez vous.
+                    Nous mettons à votre disposition un ensemble d'oeuvres diverses et variées ! Alors quels que soient vos goûts,
+                    vous trouverez votre bonheur, promis !</p>
+                   <p>Comment ça fonctionne ?
+
+                    Recherchez
+                    
+                    Parcourez la collection, utilisez les filtres, pour découvrir la prochaine oeuvre qui sera accrochée dans votre salon !
+                    
+                    Réservez
+                    
+                    Un coup de coeur ?
+                    Vous pouvez sans plus attendre réserver l'oeuvre de votre choix !
+                    
+                    Accrochez
+                    L'oeuvre peut être livrée et installée directement chez vous, ou vous pouvez venir la chercher sur place. Et voilà !
+                </p> 
+        <h4>DragonSlayer</h4>
+            <h5>Descriptions : </h5>
+                 <a href="#"><img style="width: 220px;border-radius: 13px;" src="../../assets/images/screen.png" alt="screen du projet DragonSlayer"></a>
+                 <p>jeux de role tour par tour en PHP :)</p>
+        <h4>MisterCockatil</h4>
+         <h5>Descriptions : </h5>
+    <h2>Formation</h2>
+    <div class=" d-flex flex-wrap">
+        {% for formation in formations %}
+        <div class="card" style="width: 18rem; text-align: center;">
+            <div class="card-body">
+                <h5 class="card-title">{{ formation.diplome }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ formation.ecole }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">{{ formation.date ? formation.date|date('Y-m-d') : '' }}
+                </h6>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h2>Skills</h2>
+    <div class=" d-flex flex-wrap">
+        {% for skill in skills %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ skill.Langage }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ skill.Level }}</h6>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
-{% endfor %}
-
+</div>
 {% endblock %}
